@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xxs: 25rem;
+  --breakpoint-xs: 30rem;
+}
+
+/* Define color palette */
+ :root {
+    --background-primary: #f4f6f9;
+    --color-link: #1e3a5f;
+    --color-secondary: #1d2b44;
+} 
+
+/* Base resets */
+* {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: var(--background-primary);
+    color: var(--color-secondary);
+    font-size: 0.875rem;
+    line-height: 1.6rem;
+}
+
+/* Typography overrides */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+.indie {
+    font-family: "Indie Flower", cursive;
+}
+
+/* Links */
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+/* Tag styles */
+.tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tag.good {
+    background-color: rgba(55, 212, 139, 0.1);
+    color:  #21bb55;
+    border: 1px solid rgba(60, 226, 82, 0.6);
+}
+
+.tag.dark {
+    background-color: rgba(30, 58, 95, 0.1);
+    color: var(--color-link);
+    border: 1px solid rgba(30, 58, 95, 0.3);
+}
+
+.tag.rank {
+    background-color: rgb(89, 122, 175);
+    color: var(--background-primary);
+    border: 1px solid rgba(88, 108, 140, 0.2);
+    text-shadow: 0 0 2px rgba(88, 108, 140, 0.3);
+}
+
+/* Students Cards styles */
+.card {
+    background-color:  rgb(89, 122, 175, 0.1);
+}
+
+/* Button styles */
+.card-button-primary,
+.card-button-secondary {
+    border: none !important;
+    box-shadow: rgba(30, 58, 95, 0.35) 0px 14px 55px !important;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.card-button-primary {
+    background: var(--color-link);
+    color: var(--background-primary);
+}
+
+.card-button-secondary {
+    background: var(--background-primary);
+    color: var(--color-link);
+}
+
+.card-button-primary:hover::after,
+.card-button-secondary:hover::after {
+    transform: translateX(100%);
+}
+
+.card-button-primary::after {
+    content: "";
+    position: absolute;
+    opacity: 0.1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 100%;
+    transition: 0.2s;
+    background: var(--background-primary);
+    z-index: 0;
+}
+
+.card-button-secondary::after {
+    content: "";
+    position: absolute;
+    opacity: 0.04;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 100%;
+    transition: 0.2s;
+    background: var(--color-link);
+    z-index: 0;
+}
